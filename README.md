@@ -1,16 +1,32 @@
-# React + Vite
+# Capstone Project - Moolah App - Finance Tracker Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Backend Server repo](https://github.com/cfunch29/CapstoneBackend)
 
-Currently, two official plugins are available:
+## Roadmap
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-[] Page 1 - Login
+-[] Page 2 - Registration
+-[] Page 3 - Transactions
+-[] Page 4 - Dashboard
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies Used
 
-## Expanding the ESLint configuration
+- JavaScript
+- React
+- Vite
+- react-router-dom
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Usage
+
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+
+_For more examples, please refer to the [Documentation](insert link)
+
+## Acknowledgements
+
+[JWT Integration](https://docs.google.com/document/d/147JxMx1G0yEDM1vzPvo4--fdE11fPJqMsUmeF8i_O4w/edit?tab=t.0)
+
+[README setup](https://github.com/othneildrew/Best-README-Template/blob/main/README.md?plain=1)
+
+## Reflection
