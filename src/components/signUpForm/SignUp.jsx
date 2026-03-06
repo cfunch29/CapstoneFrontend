@@ -15,7 +15,7 @@ const SignUp = ({ setNewUser }) => {
     });
 
     function handleChange(e) {
-        setFormData({...formData, [e.target.name]: e.target.value });
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     }
 
     async function handleSubmit(e) {
@@ -34,5 +34,61 @@ const SignUp = ({ setNewUser }) => {
             setErrors(error.response.data.errors.map((err) => <p>{err.msg}</p>));
         }
     }
-    
-}
+    const handleClick = () => {
+        setNewUser(false);
+    };
+
+    return (
+        <div className="forms">
+            <h2>SignUp</h2>
+            <form autoComplete="off" onSubmit={handleSubmit}>
+
+                {/* name input */}
+                <label htmlFor="name1">Name: </label>
+                <input
+                    type="text"
+                    name="name"
+                    id="name1"
+                    placeholder="First and Last Name"
+                    onChange={handleChange}
+                    value={formData.name} />
+
+                {/* Email input */}
+                <label htmlFor="email">Email: </label>
+                <input
+                    type="email"
+                    name="email"
+                    id="email1"
+                    placeholder="Email"
+                    onChange={handleChange}
+                    value={formData.email} />
+
+                {/* password input  */}
+                <label htmlFor="password1">Password: </label>
+                <input 
+                type="password" 
+                name="password" 
+                id="password1"
+                placeholder="Password"
+                onChange={handleChange}
+                value={formData.password}
+                minLength={6} />
+
+                 {/* confirm password input  */}
+                <input 
+                type="password" 
+                name="password2" 
+                id="password2"
+                placeholder="Confirm Password"
+                onChange={handleChange}
+                value={formData.password2}
+                minLength={6} />
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <button onClick={handleClick}>Sign In</button></p>
+            {errors}
+        </div>
+    );
+};
+
+export default SignUp;
