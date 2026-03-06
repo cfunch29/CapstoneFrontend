@@ -36,3 +36,8 @@ const value = useMemo(() => ({
 
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
+
+// Prevent excessive imports 
+export function useAuth() {
+    return useContext(AuthContext);
+}
