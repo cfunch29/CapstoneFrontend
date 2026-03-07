@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuth } from "../context/authContext/AuthContext.jsx";
+import { useAuth } from "../../context/authContext/AuthContext.jsx";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = ({ setNewUser }) => {

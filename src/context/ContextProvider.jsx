@@ -1,4 +1,4 @@
-import { AuthProvider } from "./authContext/authContext";
+import { AuthProvider } from "./authContext/AuthContext.jsx";
 import { CookiesProvider } from "react-cookie";
 
 export default function ContextProvider({ children }) {
