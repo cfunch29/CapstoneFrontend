@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Auth from './pages/auth/Login';
 import Dashboard from './pages/Dashboard';
 import Navbar from './components/navbar/Navbar.jsx';
+import ProtectedRoutes from "./components/ProtectedRoutes.jsx"
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Route path='/auth' element={<Auth />} />
       <Route element={<ProtectedRoutes />}>
       <Route path='/dashboard' element={<Dashboard />} />
+      <Route path='/registration' element={<Registration />} />
      </Route>
      </Routes>
     </>

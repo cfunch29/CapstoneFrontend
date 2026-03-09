@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 
 const Dashboard = () => {
-    const { logout, cookies } = useAuth;
+    const { logout, cookies } = useAuth();
 
     const nav = useNavigate();
 

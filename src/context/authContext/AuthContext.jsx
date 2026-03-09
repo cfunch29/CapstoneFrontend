@@ -14,7 +14,7 @@ async function login(formData) {
 }
 
 async function signUp(formData) {
-    let res = await axios.post("http://localhost:3000/api/user", formData);
+    let res = await axios.post("http://localhost:3000/api/users", formData);
 
     setCookies("token", res.data.token);
 }
@@ -39,5 +39,5 @@ const value = useMemo(() => ({
 
 // Prevent excessive imports 
 export function useAuth() {
-    return useContext(AuthContext);
+    return useContext(AppContext);
 }

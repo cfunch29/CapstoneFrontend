@@ -22,9 +22,9 @@ const LoginForm = ({ setNewUser }) => {
         try {
             await login(formData);
 
-            nav("/dashbord");
+            nav("/dashboard");
         } catch (error) {
-            setErrors(errors.response.data.errors.map((err) => <p>{err.msg}</p>));
+            setErrors(error.response.data.errors.map((err) => <p>{err.msg}</p>));
         }
     }
 
