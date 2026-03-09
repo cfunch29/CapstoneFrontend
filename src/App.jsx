@@ -4,6 +4,7 @@ import Auth from './pages/auth/Login';
 import Dashboard from './pages/Dashboard';
 import Navbar from './components/navbar/Navbar.jsx';
 import ProtectedRoutes from "./components/ProtectedRoutes.jsx"
+import Transactions from './pages/Transactions.jsx';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Route element={<ProtectedRoutes />}>
       <Route path='/dashboard' element={<Dashboard />} />
       <Route path='/registration' element={<Registration />} />
+      <Route path='/transactions' element={<Transactions />} />
      </Route>
      </Routes>
     </>

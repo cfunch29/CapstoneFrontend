@@ -16,6 +16,7 @@ const Navbar = () => {
             {cookies.token ? (
                 <>
                     <Link to="/dashboard">Dashboard</Link>
+                    <Link to="/transactions">Transactions</Link>
                     <button onClick={handleLogout}>Logout</button>
                 </>
             ) : (

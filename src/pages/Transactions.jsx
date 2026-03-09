@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useAuth } from "../context/authContext/AuthContext.jsx";
-import { useParams } from "react-router-dom";
 
 const Transactions = () => {
     const { cookies } = useAuth();
@@ -75,7 +74,7 @@ const Transactions = () => {
         setErrors(null);
         try {
             const res = await axios.put(`http://localhost:3000/api/transactions/${editingId}`,
-                formData {
+                formData, {
                 headers: { "x-auth-token": cookies.token },
             });
 
@@ -87,8 +86,8 @@ const Transactions = () => {
             setErrors(err.response?.data?.errors[0]?.msg || "Failed to udpate transactions");
         }
     }
-
-    async function handleUpdate(id) {
+//DELETE - delete transaction
+    async function handleDelete(id) {
 
         try {
             await axios.delete(`http://localhost:3000/api/transactions/${id}`, {
@@ -135,13 +134,6 @@ const Transactions = () => {
                     onChange={handleChange}
                     required />
 
-                <input
-                    type="text"
-                    name="category"
-                    placeholder="Category (e.g. Food, Rent)"
-                    value={formData.category}
-                    onChange={handleChange}
-                    required />
                 {/* Description */}
                 <input
                     type="text"
@@ -149,7 +141,7 @@ const Transactions = () => {
                     placeholder="Description (optional)"
                     value={formData.description}
                     onChange={handleChange}
-                    required />
+                    />
                 {/* Date */}
                 <input
                     type="date"
@@ -179,7 +171,7 @@ const Transactions = () => {
                                     {new Date(t.date).toLocaleDateString()}</span>
                             </div>
                             <div className="transaction-right">
-                                <span className="transaction-right">
+                                <span className="transaction-amount">
                                     {t.type == "expense" ? "-" : "+"}${t.amount}</span>
                                     <button onClick={() => handleEditClick(t)}>Edit</button>
                                     <button onClick={() => handleDelete(t._id)}>Delete</button>
