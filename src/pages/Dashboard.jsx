@@ -96,7 +96,39 @@ const Dashboard = () => {
     <h3>Total Income</h3>
     <p className="positive">=${totalIncome.toFixed(2)}</p>
 </div>
-<div></div>
+<div className="card expenses">
+<h3>Totale Expenses</h3>
+<p className="negative">-${totalExpenses.toFixed(2)}</p>
+</div>
+</div>
+{/* Recent Transactions Preview */}
+<div className="recent-transactions">
+    <div className="recent-header">
+        <h2>Recent Transactions</h2>
+        <Link to="/transactions">View All</Link>
+    </div>
+    {recentTransactions.length === 0 ? (
+        <p>No transactions yet. 
+            <Link to="/transactions">Add Transaction!</Link>
+        </p>
+    ) : (
+        <ul className="transaction-list">
+            {recentTransactions.map((t) => (
+                <li key={t._id} className={`transaction-item ${t.type}`}>
+                    <div className="transaction-info">
+                        <span className="transaction-category">{t.category}</span>
+                        <span className="transaction-description">{t.description}</span>
+                        <span className="transaction-date">
+                            {new Date(t.date).toLocaleDateString()}</span>
+                    </div>
+                    <div className="transaction-right">
+                        <span className="transaction-amount">
+                            {t.type === "expense" ? "-" : "+"}${t.amount}</span>
+                    </div>
+                </li>
+            ))}
+        </ul>
+    )}
 </div>
         </div>
         
