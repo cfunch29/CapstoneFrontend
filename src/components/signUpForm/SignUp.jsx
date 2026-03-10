@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../../context/authContext/AuthContext.jsx";
 import { useNavigate } from "react-router-dom";
 
-const SignUp = ({ setNewUser }) => {
+const SignUp = ({ setNewUser = () => {} }) => {
     const [errors, setErrors] = useState(null);
     const { signUp } = useAuth();
     const nav = useNavigate();
