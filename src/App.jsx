@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import Auth from './pages/auth/Login';
-import Dashboard from './pages/Dashboard';
+import Auth from './pages/auth/Login.jsx';
+import Dashboard from './pages/Dashboard.jsx';
 import Navbar from './components/navbar/Navbar.jsx';
 import ProtectedRoutes from "./components/ProtectedRoutes.jsx"
 import Transactions from './pages/Transactions.jsx';

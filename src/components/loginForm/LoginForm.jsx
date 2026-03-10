@@ -51,6 +51,7 @@ const LoginForm = ({ setNewUser }) => {
                 id="password" 
                 placeholder="Password"
                 value={formData.password}
+                onChange={handleChange}
                 minLength={6}/>
                 <button type="submit">Login</button>
             </form>
