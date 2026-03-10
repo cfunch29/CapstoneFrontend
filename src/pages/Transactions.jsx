@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import { useAuth } from "../context/authContext/AuthContext.jsx";
 
@@ -106,6 +106,42 @@ const Transactions = () => {
         setFormData(emptyForm);
     }
 
+
+    // get unique categories from transactions for filter dropdown
+    const categories = useMemo(() => {
+        const unique = [...new Set(transactions.map((t) => t.category))];
+        return unique.sort();
+    }, [transactions]);
+
+    // apply filters and sorting - runs anytime transactions, filterType, filterCategory, or softBy changes
+    const filteredAndSorted = useMemo(() => {
+        let result = [...transactions];
+
+        //filter by type
+        if (filterType !== "all")
+            result = result.filter((t) => t.type === filterType);
+
+        //filter by category
+        if (filterCategory !== "all")
+            result = result.filter((t) => t.category === filterCategory);
+
+        //sort 
+        result.sort((a, b) => {
+            //descending date sort
+            if (sortBy === "date-desc") return new Date(b.date) - new Date(a.date);
+            //ascending date sort 
+            if (sortBy === "date-asc") return new Date(a.date) - new Date(b.date);
+            //amount descending
+            if (sortBy === "amount-desc") return b.amount - a.amount;
+            //amount ascending
+            if (sortBy === "amount-asc") return a.amount - b.amount;
+            return 0;
+        });
+
+        return result;
+
+    }, [transactions, filterType, filterCategory, sortBy]);
+
     return (
         <div className="transactions-container">
             <h2>{editingId ? "Edit Transaction" : "Add Transaction"}</h2>
@@ -155,6 +191,40 @@ const Transactions = () => {
                     <button type="button" onClick={handleCancelEdit}>Cancel</button>
                 )}
             </form>
+
+            {/* Filter & Sort */}
+            <div className="filter-sort-controls">
+                {/* filter by type */}
+                <select value={filterType} onChange={(e) => setFilterType(e.target.value)}>
+                    <option value="all">All Types</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                {/* filter by category */}
+                <select value={filterCategory} onChange={(e) => setFilterCategory(e.target.value)}>
+                    <option value="all">All Categories</option>
+                    {categories.map((cat) => (
+                        <option key={cat} value={cat}>{cat}</option>
+                    ))}
+                </select>
+                <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+                    {/* Date descending */}
+                    <option value="date-desc">Newest First</option>
+                    {/* Date ascending */}
+                    <option value="date-asc">Oldest First</option>
+                    {/* Amount Descending  */}
+                    <option value="amount-desc">Amount:  High to Low</option>
+                    {/* Amount Ascending */}
+                    <option value="amount-asc">Amount:  Low to High</option>
+                </select>
+
+                {/* Reset filters */}
+                <button onClick={() =>{
+                    setFilterType("all");
+                    setFilterCategory("all");
+                    setSortBy("date-desc");
+                }}>Reset</button>
+            </div>
 
             {/* Transaction List */}
             <h2>My Transactions</h2>
