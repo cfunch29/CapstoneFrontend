@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard';
 import Navbar from './components/navbar/Navbar.jsx';
 import ProtectedRoutes from "./components/ProtectedRoutes.jsx"
 import Transactions from './pages/Transactions.jsx';
+import Registration from './pages/Registration.jsx';
 
 function App() {
 
