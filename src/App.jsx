@@ -17,7 +17,9 @@ function App() {
       <Route path='/auth' element={<Auth />} />
       <Route element={<ProtectedRoutes />}>
       <Route path='/dashboard' element={<Dashboard />} />
+  
       <Route path='/registration' element={<Registration />} />
+     
       <Route path='/transactions' element={<Transactions />} />
      </Route>
      </Routes>

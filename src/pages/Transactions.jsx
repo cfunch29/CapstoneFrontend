@@ -8,7 +8,10 @@ const Transactions = () => {
     const [transactions, setTransactions] = useState([]);
     const [errors, setErrors] = useState(null);
     const [editingId, setEditingId] = useState(null); //tracks which transaction is being edited 
-
+    const [filterType, setFilterType] = useState("all");
+    const [filterCategory, setFilterCategory] = useState("all");
+    const [sortBy, setSortBy] = useState("date-desc");
+    
     const emptyForm = {
         amount: "",
         type: "expense",

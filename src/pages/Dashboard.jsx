@@ -11,7 +11,7 @@ const Dashboard = () => {
 
     const [user, setUser] = useState(null);
 
-    const [transaction, setTransactions] = useState([]);
+    const [transactions, setTransactions] = useState([]);
 
     const [errors, setErrors] = useState(null);
 
@@ -80,7 +80,7 @@ const Dashboard = () => {
         <div className="dashboard-container">
 {/* Welcome */}
 <div className="dashboard-header">
-<h1>Welcome Back!{user ? `, ${user.name}` : ""}!</h1>
+<h1>Welcome Back{user ? `, ${user.name}` : ""}!</h1>
 <button onClick={handleLogout}>Logout</button>
 </div>
 {errors && <p className="error">{errors}</p>}
@@ -94,7 +94,7 @@ const Dashboard = () => {
 </div>
 <div className="card income">
     <h3>Total Income</h3>
-    <p className="positive">=${totalIncome.toFixed(2)}</p>
+    <p className="positive">+${totalIncome.toFixed(2)}</p>
 </div>
 <div className="card expenses">
 <h3>Totale Expenses</h3>
