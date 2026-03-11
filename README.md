@@ -40,7 +40,7 @@ The user logs in or registers and is routed to the dashboard page which they can
 
 ## Reflection
 
-- Currently the transactions are not being linked to the dashboard as it is not positioned in the components to fetch the data that is being submitted to the transactions page, will update in next version. 
+- Currently the transactions are not being linked to the dashboard as it is not positioned in the context to fetch the data that is being submitted to the transactions page, will update in next version. 
 
 - For future versions, I would include charts and graphs on the dashboard page. 
 
