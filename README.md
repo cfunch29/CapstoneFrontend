@@ -28,6 +28,8 @@ The user logs in or registers and is routed to the dashboard page which they can
 
 ## Acknowledgements
 
+[Google Fonts](https://fonts.google.com)
+
 [JWT Integration](https://docs.google.com/document/d/147JxMx1G0yEDM1vzPvo4--fdE11fPJqMsUmeF8i_O4w/edit?tab=t.0)
 
 [README setup](https://github.com/othneildrew/Best-README-Template/blob/main/README.md?plain=1)
