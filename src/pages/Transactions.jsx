@@ -236,15 +236,16 @@ const Transactions = () => {
             ) : (
                 <ul className="transaction-list">
                     {transactions.map((t) => (
-                        <li key={t._id} className={`transaction-item ${t.type}`}>
-                            <div className="transaction-info">
+                        <li key={t._id} className={`transaction-item ${t.type}`}
+                        style={{ display: "flex", justifyContent: "space-around", alignItems: "center", padding: "0.75rem 1rem", margin: "0.5rem" }}>
+                            <div className="transaction-info" style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
                                 <span className="transaction-category">{t.category}</span>
                                 <span className="transaction-description">{t.description}</span>
                                 <span className="transaction-date">
                                     {new Date(t.date).toLocaleDateString()}</span>
                             </div>
                             <div className="transaction-right">
-                                <span className="transaction-amount">
+                                <span className="transaction-amount" style={{ alignItems: "center", gap: "1rem", marginRight: "1rem" }}>
                                     {t.type == "expense" ? "-" : "+"}${t.amount}</span>
                                     <button onClick={() => handleEditClick(t)}>Edit</button>
                                     <button onClick={() => handleDelete(t._id)}>Delete</button>

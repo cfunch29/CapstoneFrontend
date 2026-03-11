@@ -1,13 +1,20 @@
 # Capstone Project - Moolah App - Finance Tracker Application
 
+This is the REACT frontend for the Finance Tracker. 
+
+
+
 [Backend Server repo](https://github.com/cfunch29/CapstoneBackend)
 
 ## Roadmap
 
--[] Page 1 - Login
--[] Page 2 - Registration
--[] Page 3 - Transactions
--[] Page 4 - Dashboard
+** Project Management [Notion](https://www.notion.so/Finance-Tracker-App-MERN-Web-App-313abfec6ae180f3aa4ade4dd935d498?source=copy_link)
+
+-[x] Page 1 - Login
+-[x] Page 2 - Registration
+-[x] Page 3 - Transactions
+-[x] Page 4 - Dashboard
+-[x] Navbar
 
 
 ## Technologies Used
@@ -17,12 +24,7 @@
 - Vite
 - react-router-dom
 - axios 
-
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](insert link)
+- react-cookie
 
 ## Acknowledgements
 
@@ -31,3 +33,6 @@ _For more examples, please refer to the [Documentation](insert link)
 [README setup](https://github.com/othneildrew/Best-README-Template/blob/main/README.md?plain=1)
 
 ## Reflection
+For future versions, I would include charts and graphs on the dashboard page. 
+
+I would also add more styling/CSS to make more visually appealing!! Inlcude cards/divs to separate each element. 

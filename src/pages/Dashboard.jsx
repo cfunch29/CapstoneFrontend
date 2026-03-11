@@ -81,12 +81,11 @@ const Dashboard = () => {
 {/* Welcome */}
 <div className="dashboard-header">
 <h1>Welcome Back{user ? `, ${user.name}` : ""}!</h1>
-<button onClick={handleLogout}>Logout</button>
 </div>
 {errors && <p className="error">{errors}</p>}
 
 {/* SUMMARY CARDS */}
-<div className="summary-cards">
+<div className="summary-cards" style={{ margin: "1rem" }}>
 <div className="card balance">
     <h3>Balance</h3>
     <p className={balance >= 0 ? "positive" : "negative"}>
@@ -104,12 +103,12 @@ const Dashboard = () => {
 {/* Recent Transactions Preview */}
 <div className="recent-transactions">
     <div className="recent-header">
-        <h2>Recent Transactions</h2>
+        <h2 style={{ margin: "1rem" }}>Recent Transactions</h2>
         <Link to="/transactions">View All</Link>
     </div>
     {recentTransactions.length === 0 ? (
-        <p>No transactions yet. 
-            <Link to="/transactions">Add Transaction!</Link>
+        <p style={{ margin: "1rem" }}>No transactions yet. 
+            <Link to="/transactions" style={{ marginLeft: "1rem" }}>Add Transaction!</Link>
         </p>
     ) : (
         <ul className="transaction-list">

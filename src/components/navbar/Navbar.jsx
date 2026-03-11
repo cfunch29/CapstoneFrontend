@@ -12,7 +12,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav>
+        <nav style={{ display: "flex", alignItems: "center", gap: "1.5rem", padding: "1rem 2rem", borderBottom: "1px solid #1e1e2e" }}>
             {cookies.token ? (
                 <>
                     <Link to="/dashboard">Dashboard</Link>

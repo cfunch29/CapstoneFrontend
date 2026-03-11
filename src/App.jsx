@@ -12,7 +12,7 @@ function App() {
   return (
     <>
     <Navbar />
-    <h2>MOOLAH</h2>
+    <h2>Moolah</h2>
      <Routes>
       <Route path='/auth' element={<Auth />} />
       <Route element={<ProtectedRoutes />}>

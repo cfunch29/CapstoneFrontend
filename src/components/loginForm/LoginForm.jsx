@@ -36,6 +36,7 @@ const LoginForm = ({ setNewUser }) => {
         <div>
             <h2>Login</h2>
             <form autoComplete="off" onSubmit={handleSubmit}>
+                <div>
                 <label htmlFor="email">Email: </label>
                 <input 
                 type="email"
@@ -44,7 +45,9 @@ const LoginForm = ({ setNewUser }) => {
                 placeholder="Email"
                 onChange={handleChange}
                 value={formData.email} />
-                <label htmlFor="password">Password: </label>
+                </div>
+                <label htmlFor="password" style={{ marginTop: "1.25rem" }} >Password: </label>
+                <div>
                 <input 
                 type="password" 
                 name="password" 
@@ -53,9 +56,10 @@ const LoginForm = ({ setNewUser }) => {
                 value={formData.password}
                 onChange={handleChange}
                 minLength={6}/>
-                <button type="submit">Login</button>
+                </div>
+                <button type="submit" style={{ marginTop: "1.25rem" }}>Login</button>
             </form>
-            <p>Don't have an account? <button onClick={handleClick}>Sign Up</button></p>
+            <p style={{ marginTop: "1.25rem", textAlign: "center", fontSize: "0.85rem" }}>Don't have an account? <button onClick={handleClick} style={{ marginLeft: "1.25rem" }}>Sign Up</button></p>
             {errors}
         </div>
     );

@@ -7,9 +7,11 @@ const Auth = () => {
     return (
         <>
         {newUser ? (
+    
             <SignUp setNewUser={setNewUser}/> ) :
             ( <LoginForm setNewUser={setNewUser} />
             )}
+            
             </>
     );
 };
