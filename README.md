@@ -2,7 +2,7 @@
 
 This is the REACT frontend for the Finance Tracker. 
 
-
+The user logs in or registers and is routed to the dashboard page which they can then navigate to transactions to add and update any transactions. The user also has the capability to delete any transactions. 
 
 [Backend Server repo](https://github.com/cfunch29/CapstoneBackend)
 
@@ -33,6 +33,11 @@ This is the REACT frontend for the Finance Tracker.
 [README setup](https://github.com/othneildrew/Best-README-Template/blob/main/README.md?plain=1)
 
 ## Reflection
+
+- Currently the transactions are not being linked to the dashboard as it is not positioned in the components to fetch the data that is being submitted to the transactions page, will update in next version. 
+
 For future versions, I would include charts and graphs on the dashboard page. 
 
 I would also add more styling/CSS to make more visually appealing!! Inlcude cards/divs to separate each element. 
+
+In the next update I will add a function to alert users before they delete a transaction. 
